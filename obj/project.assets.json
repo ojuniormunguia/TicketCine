@@ -191,19 +191,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\theoj\\.nuget\\packages\\": {}
+    "C:\\Users\\Diseñador24\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\theoj\\OneDrive\\Documentos\\TicketCine\\TicketCine\\TicketCine.csproj",
+      "projectUniqueName": "C:\\Users\\Diseñador24\\Desktop\\Tests\\TicketCine\\TicketCine.csproj",
       "projectName": "TicketCine",
-      "projectPath": "C:\\Users\\theoj\\OneDrive\\Documentos\\TicketCine\\TicketCine\\TicketCine.csproj",
-      "packagesPath": "C:\\Users\\theoj\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\theoj\\OneDrive\\Documentos\\TicketCine\\TicketCine\\obj\\",
+      "projectPath": "C:\\Users\\Diseñador24\\Desktop\\Tests\\TicketCine\\TicketCine.csproj",
+      "packagesPath": "C:\\Users\\Diseñador24\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Diseñador24\\Desktop\\Tests\\TicketCine\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\theoj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Diseñador24\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -258,7 +258,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
