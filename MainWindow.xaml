@@ -1,0 +1,32 @@
+﻿<Window x:Class="TicketCine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicketCine"
+        mc:Ignorable="d"
+        WindowStyle="ThreeDBorderWindow"
+        Title="MainWindow" Height="720" Width="1080">
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="C:\Users\theoj\OneDrive\Documentos\TicketCine\TicketCine\pexels-nathan-engel-436413.jpg" Stretch="Fill" />
+
+        <!-- Grid for dynamic sizing -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Centered Border with dynamic width -->
+            <Label Content="Sistema de cine" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,59,0,0" Height="71" Width="360" FontWeight="Bold" Background="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Semibold"/>
+            <Border Grid.Column="1" Background="White" Height="491" VerticalAlignment="Top" CornerRadius="10,10,10,10" Margin="0,149,0,0" Padding="20,40,20,40">
+                <StackPanel Height="200" VerticalAlignment="Top">
+                    <TextBox x:Name="txtUsuario" Margin="10" FontSize="20" />
+                    <PasswordBox x:Name="txtPass" Margin="10" FontSize="20"/>
+                    <Button Content="Login" Margin="10" HorizontalAlignment="Center" Width="100" FontSize="20" Click="iniciarSesion"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

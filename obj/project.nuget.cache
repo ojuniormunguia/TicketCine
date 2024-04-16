@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "TOD8d28XyUtJOrF61KWl2OJDkZ2DP6FMvaC2HEyi+fWOVvTu5nb/BsWVLHG0x7JYtaYhMmZBpjCsQY+oKZlJNg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\theoj\\OneDrive\\Documentos\\TicketCine\\TicketCine\\TicketCine.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\theoj\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\theoj\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\theoj\\.nuget\\packages\\npgsql\\8.0.2\\npgsql.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
