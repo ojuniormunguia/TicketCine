@@ -23,6 +23,12 @@ namespace TicketCine
         public MainWindow()
         {
             InitializeComponent();
+            this.Closing += ThisWindow_Closing;
+        }
+
+        private void ThisWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown(); 
         }
 
         private void iniciarSesion(object sender, RoutedEventArgs e)
@@ -50,11 +56,15 @@ namespace TicketCine
 
                         if (autenticado)
                         {
-                            MessageBox.Show("Inició sesión.");
+
+                            MenúPrincipal menúPrincipal = new MenúPrincipal();
+                            menúPrincipal.Show();
+                            this.Hide();
+                            return autenticado;
                         }
                         else
                         {
-                            MessageBox.Show("Usuario o contraseña incorrecta.");
+                            return autenticado;
                         }
                     }
                 }
@@ -67,7 +77,7 @@ namespace TicketCine
             catch (Exception ex)
             {
                 Console.WriteLine($"error: {ex.Message}");
-                MessageBox.Show($"error: {ex.Message}");
+                MessageBox.Show($"errores: {ex.Message}");
             }
             return autenticado;
         }

@@ -8,7 +8,7 @@
         WindowStyle="ThreeDBorderWindow"
         Title="MainWindow" Height="720" Width="1080">
     <Grid>
-        <Image Source="\pexels-nathan-engel-436413.jpg" Stretch="Fill" />
+        <Image Source="C:\Users\theoj\OneDrive\Documentos\TicketCine\TicketCine\pexels-nathan-engel-436413.jpg" Stretch="Fill" />
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
