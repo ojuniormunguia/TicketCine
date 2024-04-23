@@ -25,8 +25,12 @@ namespace TicketCine
             InitializeComponent();
             IdPelicula = idPelicula;
             CargarHorarios();
+            this.Closing += ThisWindow_Closing;
         }
-
+        private void ThisWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
         private void CargarHorarios()
         {
             List<Horario> horarios = new List<Horario>();
@@ -56,6 +60,12 @@ namespace TicketCine
 
             ListViewHorarios.ItemsSource = horarios;
         }
+        private void click_regresar(object sender, RoutedEventArgs e)
+        {
+            MenúPrincipal menúPrincipal = new MenúPrincipal();
+            menúPrincipal.Show();
+            this.Hide();
+        }
     }
 
     public class Horario
@@ -65,4 +75,5 @@ namespace TicketCine
         public string Sala { get; set; }
         public string Formato { get; set; }
     }
+    
 }
