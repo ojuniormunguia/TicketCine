@@ -12,9 +12,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Button added in the first row -->
+        <!-- Botón Regresar -->
         <Button Content="Regresar" Grid.Row="0" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Click="click_regresar"/>
 
+        <!-- ListView para mostrar los horarios -->
         <ListView Grid.Row="1" x:Name="ListViewHorarios" Margin="10">
             <ListView.ItemTemplate>
                 <DataTemplate>

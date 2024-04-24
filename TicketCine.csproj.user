@@ -16,6 +16,9 @@
     <Compile Update="MenúPrincipal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MostrarTodosUsuarios.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Usuarios.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MenúPrincipal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MostrarTodosUsuarios.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Usuarios.xaml">

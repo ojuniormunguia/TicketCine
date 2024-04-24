@@ -11,6 +11,9 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Button Content="Buscar Pelicula" FontSize="20" HorizontalAlignment="Right" Width="162" Margin="0,5,0,5" Click="Click_Usuarios"/>
+        </Grid>
         <Grid x:Name="grid" Margin="0,70,0,0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>

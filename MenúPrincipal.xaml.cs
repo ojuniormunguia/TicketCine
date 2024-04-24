@@ -99,5 +99,12 @@ namespace TicketCine
                 this.Hide();
             }
         }
+
+        private void Click_Usuarios(object sender, RoutedEventArgs e)
+        {
+            MostrarTodosUsuarios mostrarTodosUsuarios = new MostrarTodosUsuarios();
+            mostrarTodosUsuarios.Show();
+            this.Hide();
+        }
     }
 }

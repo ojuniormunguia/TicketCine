@@ -1,0 +1,16 @@
+﻿<Window x:Class="TicketCine.MostrarTodosUsuarios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestión de Usuarios" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="listViewUsuarios" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding IdUsuario}" Width="50"/>
+                    <GridViewColumn Header="Nombre de Usuario" DisplayMemberBinding="{Binding NombreUsuario}" Width="200"/>
+                    <GridViewColumn Header="Contraseña" DisplayMemberBinding="{Binding Contrasena}" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

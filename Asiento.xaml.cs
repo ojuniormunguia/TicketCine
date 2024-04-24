@@ -15,13 +15,19 @@ using System.Windows.Shapes;
 namespace TicketCine
 {
     /// <summary>
-    /// Lógica de interacción para Asiento.xaml
+    /// Interaction logic for Asiento.xaml
     /// </summary>
     public partial class Asiento : Window
     {
         public Asiento()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            MessageBox.Show("Has seleccionado el asiento: " + clickedButton.Content);
         }
     }
 }
