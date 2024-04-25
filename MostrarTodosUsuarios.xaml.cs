@@ -16,6 +16,7 @@ namespace TicketCine
             CargarUsuarios();
             this.Closing += ThisWindow_Closing;
         }
+
         private void ThisWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
@@ -23,36 +24,44 @@ namespace TicketCine
 
         private void CargarUsuarios()
         {
-            List<Usuario> listaUsuarios = new List<Usuario>();
-            string consulta = "SELECT id_usuario, nombre_usuario, contrasena FROM userbase";
+            List<User> listaUsuarios = new List<User>();
+            string consulta = "SELECT usuario, nombre, contrasena FROM userbase";
 
-            using (var conexion = new NpgsqlConnection(cadenaConexion))
+            try
             {
-                conexion.Open();
-                using (var cmd = new NpgsqlCommand(consulta, conexion))
+                using (var conexion = new NpgsqlConnection(cadenaConexion))
                 {
-                    using (var reader = cmd.ExecuteReader())
+                    conexion.Open();
+                    using (var cmd = new NpgsqlCommand(consulta, conexion))
                     {
-                        while (reader.Read())
+                        using (var reader = cmd.ExecuteReader())
                         {
-                            listaUsuarios.Add(new Usuario
+                            while (reader.Read())
                             {
-                                IdUsuario = reader.GetInt32(0),
-                                NombreUsuario = reader.GetString(1),
-                                Contrasena = reader.GetString(2)
-                            });
+                                listaUsuarios.Add(new User
+                                {
+                                    Usuario = reader.GetString(0),
+                                    Nombre = reader.GetString(1),
+                                    Contrasena = reader.GetString(2)
+                                });
+                            }
                         }
                     }
                 }
+                listViewUsuarios.ItemsSource = listaUsuarios;
             }
-            listViewUsuarios.ItemsSource = listaUsuarios;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading users: " + ex.Message);
+            }
         }
     }
 
-    public class Usuario
+    public class User
     {
-        public int IdUsuario { get; set; }
-        public string NombreUsuario { get; set; }
+        public string Usuario { get; set; }
+        public string Nombre { get; set; }
         public string Contrasena { get; set; }
     }
+
 }

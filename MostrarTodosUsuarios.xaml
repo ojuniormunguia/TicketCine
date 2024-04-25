@@ -6,8 +6,8 @@
         <ListView x:Name="listViewUsuarios" Margin="10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding IdUsuario}" Width="50"/>
-                    <GridViewColumn Header="Nombre de Usuario" DisplayMemberBinding="{Binding NombreUsuario}" Width="200"/>
+                    <GridViewColumn Header="Usuario" DisplayMemberBinding="{Binding Usuario}" Width="150"/>
+                    <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding Nombre}" Width="200"/>
                     <GridViewColumn Header="Contraseña" DisplayMemberBinding="{Binding Contrasena}" Width="200"/>
                 </GridView>
             </ListView.View>
