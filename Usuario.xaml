@@ -1,0 +1,45 @@
+﻿<Window x:Class="TicketCine.Usuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicketCine"
+        mc:Ignorable="d"
+        Title="Usuario" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Nombre:" Grid.Row="0" Grid.Column="0"/>
+        <TextBox x:Name="txtNombre" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Género:" Grid.Row="1" Grid.Column="0"/>
+        <ComboBox x:Name="cmbGenero" Grid.Row="1" Grid.Column="1" Margin="5" 
+                  ItemsSource="{Binding GenderOptions}"/>
+
+        <Label Content="Edad:" Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="txtEdad" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Correo:" Grid.Row="3" Grid.Column="0"/>
+        <TextBox x:Name="txtCorreo" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Teléfono:" Grid.Row="4" Grid.Column="0"/>
+        <TextBox x:Name="txtTelefono" Grid.Row="4" Grid.Column="1" Margin="5"/>
+
+        <Button Content="Guardar Cliente" Grid.Row="5" Grid.Column="1" Click="Button_SaveClick"/>
+
+        <CheckBox x:Name="chkAgregarTarjetaPlus" Content="Agregar Tarjeta Plus" Grid.Row="6" Grid.Column="1" Margin="5"/>
+    </Grid>
+</Window>

@@ -34,7 +34,7 @@ namespace TicketCine
         private void CargarHorarios()
         {
             List<Horario> horarios = new List<Horario>();
-            string consulta = "SELECT Hora, Fecha, Sala, Formato FROM horarios WHERE IDPelicula = @IdPelicula";
+            string consulta = "SELECT idhorario ,hora, fecha, sala, formato FROM horarios WHERE IDPelicula = @IdPelicula";
 
             using (var conexion = new NpgsqlConnection(cadenaConexion))
             {
@@ -46,12 +46,14 @@ namespace TicketCine
                     {
                         while (reader.Read())
                         {
+                            
                             horarios.Add(new Horario()
                             {
-                                Hora = reader.GetTimeSpan(0).ToString(),
-                                Fecha = reader.GetDateTime(1).ToString("yyyy-MM-dd"),
-                                Sala = reader.GetString(2),
-                                Formato = reader.GetString(3)
+                                idHorario = reader.GetInt32(0),
+                                Hora = reader.GetTimeSpan(1).ToString(),
+                                Fecha = reader.GetDateTime(2).ToString("yyyy-MM-dd"),
+                                Sala = reader.GetString(3),
+                                Formato = reader.GetString(4)
                             });
                         }
                     }
@@ -66,10 +68,22 @@ namespace TicketCine
             menúPrincipal.Show();
             this.Hide();
         }
+
+        private void ListViewHorarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListViewHorarios.SelectedItem is Horario selectedHorario)
+            {
+                Asiento ventanaAsientos = new Asiento(IdPelicula, selectedHorario.idHorario);
+                ventanaAsientos.Show();
+                this.Hide();
+            }
+        }
+
     }
 
     public class Horario
     {
+        public int idHorario { get; set; }
         public string Hora { get; set; }
         public string Fecha { get; set; }
         public string Sala { get; set; }

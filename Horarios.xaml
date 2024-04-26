@@ -16,11 +16,12 @@
         <Button Content="Regresar" Grid.Row="0" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Click="click_regresar"/>
 
         <!-- ListView para mostrar los horarios -->
-        <ListView Grid.Row="1" x:Name="ListViewHorarios" Margin="10">
+        <ListView Grid.Row="1" x:Name="ListViewHorarios" Margin="10" SelectionChanged="ListViewHorarios_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Background="#FFECF1F1" Margin="0" Padding="20" CornerRadius="5">
                         <StackPanel>
+                            <TextBlock Text="{Binding idHorario}" FontSize="16" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Hora}" FontSize="16" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Sala}" FontSize="14"/>
                             <TextBlock Text="{Binding Fecha}" FontSize="14"/>

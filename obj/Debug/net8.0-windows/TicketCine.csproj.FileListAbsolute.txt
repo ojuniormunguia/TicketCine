@@ -64,3 +64,5 @@ C:\Users\theoj\OneDrive\Documentos\TicketCine\TicketCine\obj\Debug\net8.0-window
 C:\Users\theoj\OneDrive\Documentos\TicketCine\TicketCine\obj\Debug\net8.0-windows\TicketCine.pdb
 C:\Users\theoj\OneDrive\Documentos\TicketCine\TicketCine\obj\Debug\net8.0-windows\TicketCine.genruntimeconfig.cache
 C:\Users\theoj\OneDrive\Documentos\TicketCine\TicketCine\obj\Debug\net8.0-windows\ref\TicketCine.dll
+C:\Users\theoj\OneDrive\Documentos\TicketCine\TicketCine\obj\Debug\net8.0-windows\Usuario.g.cs
+C:\Users\theoj\OneDrive\Documentos\TicketCine\TicketCine\obj\Debug\net8.0-windows\Usuario.baml
