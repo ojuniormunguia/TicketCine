@@ -72,6 +72,9 @@ namespace TicketCine
 
                     transaction.Commit();
                     MessageBox.Show("Cliente guardado correctamente.");
+
+                    // Aquí llamamos a la función que maneja las reservaciones y tickets
+                    CreateReservationsAndTickets(idCliente);
                 }
                 catch (Exception ex)
                 {
@@ -80,6 +83,66 @@ namespace TicketCine
                 }
             }
         }
+
+        private void CreateReservationsAndTickets(int idCliente)
+        {
+            using (NpgsqlConnection connection = new NpgsqlConnection(cadenaConexion))
+            {
+                connection.Open();
+                NpgsqlCommand command = new NpgsqlCommand();
+                NpgsqlTransaction transaction = connection.BeginTransaction();
+                command.Connection = connection;
+                command.Transaction = transaction;
+
+                try
+                {
+                    // Inicia la transacción
+                    command.CommandText = "BEGIN;";
+                    command.ExecuteNonQuery();
+
+                    // Insertar reservaciones
+                    command.CommandText = @"
+                INSERT INTO reservaciones (IDHorario, Asiento)
+                VALUES (1, 12), (1, 13)
+                RETURNING IDReservacion";
+                    List<int> reservationIds = new List<int>();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            reservationIds.Add(reader.GetInt32(0));
+                        }
+                    }
+
+                    // Crear y mostrar IDTickets
+                    StringBuilder sb = new StringBuilder();
+                    foreach (var reservationId in reservationIds)
+                    {
+                        command.Parameters.Clear();
+                        command.CommandText = @"
+                    INSERT INTO ticket (IDTicket, IDCliente, IDReservacion)
+                    VALUES (md5(random()::text || clock_timestamp()::text)::char(16), @idCliente, @idReservacion)
+                    RETURNING IDTicket";
+                        command.Parameters.AddWithValue("@idCliente", idCliente);
+                        command.Parameters.AddWithValue("@idReservacion", reservationId);
+                        var ticketId = command.ExecuteScalar().ToString();
+                        sb.AppendLine(ticketId);
+                    }
+
+                    // Finalizar transacción
+                    command.CommandText = "COMMIT;";
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Reservaciones y tickets creados correctamente.\nTickets IDs:\n" + sb.ToString());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al crear reservaciones y tickets: " + ex.Message);
+                    transaction.Rollback();
+                }
+            }
+        }
+
 
 
     }
